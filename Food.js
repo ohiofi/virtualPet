@@ -14,6 +14,15 @@ function Food(type, name, value) {
     this.Value = value || 0 
     this.Eaten = false
 
+    //wow this is so easily readable and im not completely misunderstanding the entire concept of code readability
+    this.SetType (newType)  = function() { this.Type  = newType  }
+    this.SetName (newName)  = function() { this.Name  = newName  }
+    this.SetValue(newValue) = function() { this.Value = newValue }
+    this.GetType ()         = function() { return this.Type  }
+    this.GetName ()         = function() { return this.Name  }
+    this.GetValue()         = function() { return this.Value }
+    this.IsEaten ()         = function() { return this.Eaten }
+
     //makes the pet eat the food, returns the food's value or 0 if it's already eaten
     this.Eat = function() { //oh god please help me this better not all be in here
         if (this.Eaten) {
