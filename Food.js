@@ -8,19 +8,24 @@
 */
 
 class Food{
+
+    // this establishes that there will be private instance variables
+    #type;
+    #name;
+    
     constructor(type, name, value) {
-        this.type  = type  || "None";
-        this.name  = name  || "NewFood"; //quick pretend this is readable
+        this.#type  = type  || "None";
+        this.#name  = name  || "NewFood";
         this.value = value || 0;
         this.eaten = false;
     }
 
     
-    setType(newType)  { this.type  = newType  }
-    setName(newName)  { this.name  = newName  }
+    setType(newType)  { this.#type  = newType  }
+    setName(newName)  { this.#name  = newName  }
     setValue(newValue){ this.value = newValue }
-    getType()         { return this.type  }
-    getName()         { return this.name  }
+    getType()         { return this.#type  }
+    getName()         { return this.#name  }
     getValue()        { return this.value }
     isEaten()         { return this.eaten }
 
@@ -35,8 +40,8 @@ class Food{
 
     toString() {
         let output = "";
-        output += this.name + ": \n";
-        output += "Type: " + this.type + ", \n";
+        output += this.#name + ": \n";
+        output += "Type: " + this.#type + ", \n";
         output += "Value: " + this.value + ", \n";
         output += "Already Eaten: " + (!this.eaten && "No" || "Yes") + ", \n";
         return output;
